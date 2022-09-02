@@ -51,14 +51,12 @@ class MainActivity : AppCompatActivity() {
         viewModel.loans.observe(this){
             loan->
             if (loan != null){
-                val userNamesWithLoans = loan.map { "${it.username} - ${it.loan?.status} - ${it.loan?.due}" }
+                val userNamesWithLoans = loan.shuffled().map { "${it.username} - ${it.loan?.status} - ${it.loan?.due}" }
 
                 binding.selectionSpinner.bindSpiner(userNamesWithLoans)
 
-                val uiModel = loan.map { loanPresentationToUiModelMapper.toUI(it) }.first()
+                val uiModel = loan.shuffled().map { loanPresentationToUiModelMapper.toUI(it) }.first()
                 updateUI(uiModel)
-                statusCardView.bindData(uiModel.statusInfoUiModel)
-                dreamCardView.bindData(uiModel.dreamColumnUiModel)
             }
         }
 
@@ -80,5 +78,7 @@ class MainActivity : AppCompatActivity() {
             topCardView.visibility = View.VISIBLE
             dueLoanCardView.visibility = View.GONE
         }
+        statusCardView.bindData(uiModel.statusInfoUiModel)
+        dreamCardView.bindData(uiModel.dreamColumnUiModel)
     }
 }
