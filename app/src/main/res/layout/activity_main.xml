@@ -10,12 +10,28 @@
             type="com.example.talaapp.presentation.model.LoanViemModel" />
     </data>
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#CCCBCB"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/image_view"
+            app:layout_constraintTop_toBottomOf="@id/image_view"
+            android:id="@+id/title_text_view"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Pick from list to refresh layout with content"
+            style="@style/TextAppearance.Material3.BodyMedium"
+            />
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:layout_width="match_parent"
@@ -61,4 +77,7 @@
         <include layout="@layout/card_view_faq"/>
 
     </LinearLayout>
+
+
+</ScrollView>
 </layout>
