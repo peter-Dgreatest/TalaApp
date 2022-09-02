@@ -13,6 +13,8 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.mockito.BDDMockito.given
 import org.mockito.Mock
+import org.mockito.junit.MockitoJUnit
+import org.mockito.junit.MockitoRule
 
 val givenLoanDataModel = LoanDataModel(
     status = "due",
@@ -29,7 +31,6 @@ val expectedLoanDomainModel = LoanDomainModel(
     dueDate = 1563256800000,
     approved = null
 )
-
 
 @RunWith(Parameterized::class)
 class LoanStatusDataToDomainModelMapperTest(
@@ -90,9 +91,8 @@ class LoanStatusDataToDomainModelMapperTest(
     @Mock
     lateinit var loanDataToDomainModelMapper: LoanDataToDomainModelMapper
 
-
     @get:Rule
-    val instantExecutorRule = InstantTaskExecutorRule()
+    val mockitoRules: MockitoRule = MockitoJUnit.rule()
 
     @Before
     fun setUp() {
