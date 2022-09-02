@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/title_text_view"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="You are on track!"
+        style="@style/TextAppearance.Material3.TitleSmall"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text_view"
+        android:id="@+id/title_loan_amount"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Php 740"
+        android:textColor="@color/teal_200"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:textSize="40dp"
+        />
+
+    <TextView
+        android:id="@+id/body_due_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/due_info"
+        app:layout_constraintStart_toStartOf="@id/title_text_view"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        app:layout_constraintTop_toBottomOf="@id/title_loan_amount" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btn_make_payment"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#DC572D"
+        android:text="Make A Payment"
+        app:layout_constraintStart_toStartOf="@id/title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/body_due_date"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#00FFFFFF"
+        android:textColor="@color/black"
+        android:text="How To Repay"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/btn_make_payment"
+        app:layout_constraintTop_toBottomOf="@id/body_due_date"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

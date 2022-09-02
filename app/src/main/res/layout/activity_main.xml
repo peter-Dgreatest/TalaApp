@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.talaapp.presentation.model.LoanViemModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCCBCB"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:id="@+id/selection_spinner"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.example.talaapp.ui.cardviews.TalaTopCardView
+            android:id="@+id/topCardView"
+            android:layout_width="match_parent"
+            style="@style/CardViewStyle"
+            android:layout_height="wrap_content"/>
+
+        <com.example.talaapp.ui.cardviews.TalaDueLoanCardView
+            android:id="@+id/dueCardView"
+            android:layout_width="match_parent"
+            style="@style/CardViewStyle"
+            android:background="#00000000"
+            android:layout_height="wrap_content"/>
+
+        <com.example.talaapp.ui.cardviews.TalaStatusCardView
+            android:id="@+id/statusCardView"
+            android:layout_width="match_parent"
+            style="@style/CardViewStyle"
+            android:background="#00000000"
+            android:layout_height="wrap_content"/>
+
+        <com.example.talaapp.ui.cardviews.TalaDreamCardView
+            android:id="@+id/dreamCardView"
+            android:layout_width="match_parent"
+            style="@style/CardViewStyle"
+            android:background="#00000000"
+            android:layout_height="wrap_content"/>
+
+        <include android:id="@+id/ref_layout" layout="@layout/card_view_invite_friends"/>
+        <include layout="@layout/card_view_faq"/>
+
+    </LinearLayout>
+</layout>

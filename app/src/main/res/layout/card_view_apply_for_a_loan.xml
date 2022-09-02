@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#00BCD4"
+        android:alpha="0.8"
+        app:tint="@color/ic_apply_for_a_loan_background"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/image_view"
+        android:src="@drawable/img_loan_status_apply"
+        android:backgroundTint="@color/ic_apply_for_a_loan_background"
+        app:tint="@color/ic_apply_for_a_loan_background"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/image_view"
+        app:layout_constraintTop_toBottomOf="@id/image_view"
+        android:id="@+id/title_text_view"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Apply For Loan"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        />
+
+    <TextView
+        android:id="@+id/body_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repay_info"
+        app:layout_constraintStart_toStartOf="@id/title_text_view"
+        android:layout_marginTop="10dp"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        app:layout_constraintTop_toBottomOf="@id/title_text_view" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#DC572D"
+        android:text="Apply Now"
+        app:layout_constraintStart_toStartOf="@id/title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/body_text_view"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
