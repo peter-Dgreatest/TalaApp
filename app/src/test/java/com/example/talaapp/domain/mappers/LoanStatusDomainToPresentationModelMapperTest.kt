@@ -6,11 +6,14 @@ import com.example.talaapp.presentation.model.LoanPresentationModel
 import com.example.talaapp.presentation.model.LoanStatusPresentationModel
 import junit.framework.Assert.assertEquals
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.mockito.BDDMockito.given
 import org.mockito.Mock
+import org.mockito.junit.MockitoJUnit
+import org.mockito.junit.MockitoRule
 
 val givenLoanDomainModel = LoanDomainModel(
     status = "due",
@@ -87,6 +90,9 @@ class LoanStatusDomainToPresentationModelMapperTest(
 
     @Mock
     lateinit var loanDomainToPresentationModelMapper: LoanDomainToPresentationModelMapper
+
+    @get:Rule
+    val mockitoRules: MockitoRule = MockitoJUnit.rule()
 
     @Before
     fun setUp() {
