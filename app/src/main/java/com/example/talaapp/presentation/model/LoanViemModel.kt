@@ -19,12 +19,12 @@ class LoanViemModel @Inject constructor(
 
     fun filterBy(filterString: String) {
         val split = filterString.split("-")
-        filtered.value = loans.value?.first {
+        filtered.value = loans.value?.firstOrNull() {
                 it ->
                     it.username == split[1].trim() &&
                             it.loan?.status.toString() == split[1].trim() &&
                             it.loan?.due.toString() == split[2].trim()
-        }
+        }?:loans.value?.first()
     }
 
 
