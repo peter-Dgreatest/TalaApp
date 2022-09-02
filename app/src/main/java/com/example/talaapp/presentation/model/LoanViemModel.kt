@@ -1,5 +1,6 @@
 package com.example.talaapp.presentation.model
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.talaapp.domain.mappers.LoanStatusDomainToPresentationModelMapper
@@ -19,12 +20,12 @@ class LoanViemModel @Inject constructor(
 
     fun filterBy(filterString: String) {
         val split = filterString.split("-")
-        filtered.value = loans.value?.firstOrNull() {
+        filtered.value = loans.value?.first {
                 it ->
-                    it.username == split[1].trim() &&
+                    it.username == split[0].trim() &&
                             it.loan?.status.toString() == split[1].trim() &&
                             it.loan?.due.toString() == split[2].trim()
-        }?:loans.value?.first()
+        }
     }
 
 
